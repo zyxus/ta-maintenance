@@ -1,0 +1,37 @@
+{
+    "name": "technoavia/maintenance-page",
+    "type": "project",
+    "description": "Минимальная страница-заглушка Техноавиа без базы данных",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.3",
+        "laravel/framework": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-install-cmd": [
+            "@php scripts/setup.php"
+        ],
+        "post-create-project-cmd": [
+            "@php scripts/setup.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform": {
+            "php": "8.3.0"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
